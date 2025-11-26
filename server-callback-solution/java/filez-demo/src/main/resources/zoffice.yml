@@ -1,0 +1,21 @@
+# Integration configuration file, including zoffice configuration and business system configuration
+
+# 1. zoffice service configuration, must be consistent with application settings in document platform management console
+zoffice:
+  service:                                          # Integration url => http://172.16.52.27:8001/docs/app/${repoId}/${docId}/${action}/content?...
+    schema: '${ZOFFICE_SCHEMA:http}'
+    host: '${ZOFFICE_HOST:172.16.34.165}'            # zOffice deployed service domain or host IP
+    port: ${ZOFFICE_PORT:8001}
+    context: /docs/app              # zOffice deployed service request path, fixed value
+    cors: ${ZOFFICE_CORS:true}
+
+# 2. Business system configuration
+demo:
+  host: '${DEMO_HOST:172.16.34.165}'              # Business system deployed service domain or host IP
+  context: '${DEMO_CONTEXT:/v2/context}'      # Business system request path
+  repoId: '${DEMO_REPO_ID:3rd-party}'         # Business system application ID
+  token-name: '${DEMO_TOKEN_NAME:zdocs_access_token}' # Business system authentication token name, configurable in management console
+  admin:          # Default login user configuration, unrelated to integration
+    uname: admin
+    pwd: zOffice
+    email: admin@lenovo_zOffice.com
