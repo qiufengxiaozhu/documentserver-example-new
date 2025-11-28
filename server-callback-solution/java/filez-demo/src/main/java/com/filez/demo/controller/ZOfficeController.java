@@ -87,7 +87,7 @@ public class ZOfficeController {
     }
 
     @Log("Document platform requests file download")
-    @ApiOperation(value = "/v2/context/{docId}/content: Download specified file interface; if there is a custom download interface implementation, put it in the integration URL above, no additional implementation is needed")
+    @ApiOperation(value = "/v2/context/{docId}/content: Download specified file interface")
     @GetMapping(path = "/{docId}/content")
     public void getDocContent(@PathVariable @ApiParam(value = "Specified file ID. Note that the file ID cannot contain colon ':'") String docId,
                               @RequestParam(defaultValue = "latest") @ApiParam(value = "File version, if not filled, it is the latest version") String version,
@@ -127,7 +127,7 @@ public class ZOfficeController {
     }
 
     @Log("Document platform returns latest document interface")
-    @ApiOperation(value = "/v2/context/{docId}/content: ZOffice returns user-edited files; if there is a custom upload interface implementation, put it in the integration URL above, no additional implementation is needed")
+    @ApiOperation(value = "/v2/context/{docId}/content: ZOffice returns user-edited files")
     @ResponseBody
     @PostMapping(path = "/{docId}/content", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public String publishDoc(@PathVariable String docId,
@@ -162,7 +162,7 @@ public class ZOfficeController {
     }
 
 	@Log("Get document information, this API is used to query document meta information")
-	@ApiOperation(value = "/v2/context/{docId}/meta: Get document information interface; if provided in advance in the URL, this method is not needed")
+	@ApiOperation(value = "/v2/context/{docId}/meta: Get document information interface;")
 	@GetMapping(path = "/{docId}/meta", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public String getDocMeta(@PathVariable String docId,
@@ -183,7 +183,7 @@ public class ZOfficeController {
 	}
 
     @Log("Get user information interface, this API is used to query which users have editing permissions, etc.")
-    @ApiOperation(value = "/v2/context/profiles: Get user information interface; if you don't need to specify which people have editing permissions, this method is not needed")
+    @ApiOperation(value = "/v2/context/profiles: Get user information interface")
     @ResponseBody
     @GetMapping(path = "/profiles", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getUserProfile(

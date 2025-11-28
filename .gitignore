@@ -1,0 +1,7 @@
+.vscode
+.cursorignore
+
+target
+data
+local-file
+logs
