@@ -70,7 +70,7 @@ public class ZOfficeController {
     @Log("Open Document Page")
     @ApiOperation(value = "Open Document Page to requesting ZOffice service")
     @GetMapping(value = "/openDoc", produces = "text/plain;charset=UTF-8")
-    public String getOpenDocUrl(@RequestParam(name = "docId") String docId,
+    public String openDoc(@RequestParam(name = "docId") String docId,
                                                  @RequestParam(name = "action", defaultValue = "view") String action, Model model) throws Exception {
 
         log.info("open doc: {}", docId);
