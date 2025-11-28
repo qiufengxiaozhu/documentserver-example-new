@@ -1,0 +1,88 @@
+/* Right-click menu style context-menu, rounded border, gray */
+.context-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+/* Right-click menu item style context-menu-item, separated by horizontal lines */
+.context-menu-item {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* file-icon is the file icon, needs to be on the same line as filename, with 10px right margin */
+.file-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.file-name {
+    width: 70%;
+}
+
+.file-op {
+    width: 30px;
+}
+
+/* convert-form is the conversion form, overlays the current page */
+.convert-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 600;
+}
+
+/*
+* File upload area, requires not affecting other elements, so uses absolute positioning
+*/
+#dropArea {
+    transition: border 0.3s; /* Add transition effect */
+    width: 90vw;
+    height: 90vh;
+    position: absolute;
+    display: none;
+}
+
+#dropArea.active {
+    border: 2px dashed blue; /* Style when dragging */
+}
+
+.multi-btn {
+    display: flex;
+    flex-direction: row;
+}
+
+.op-btn {
+    display: none;
+    margin-left: 10px;
+}
+.file-row-hover .op-btn {
+    display: block;
+}
+
+.file-row:hover .op-btn {
+    display: block; /* Show when mouse hovers over elements with .visible-on-hover class */
+}
+
+

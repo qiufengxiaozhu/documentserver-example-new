@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.filez.demo.dao.DocMetaMapper">
+
+    <!-- Basic result mapping -->
+    <resultMap id="BaseResultMap" type="com.filez.demo.entity.DocMetaEntity">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="description" property="description" />
+        <result column="created_at" property="createdAt" />
+        <result column="modified_at" property="modifiedAt" />
+        <result column="size" property="size" />
+        <result column="version" property="version" />
+        <result column="filepath" property="filepath" />
+        <result column="role" property="role" />
+        <result column="created_by_id" property="createdById" />
+        <result column="created_by_name" property="createdByName" />
+        <result column="created_by_email" property="createdByEmail" />
+        <result column="modified_by_id" property="modifiedById" />
+        <result column="modified_by_name" property="modifiedByName" />
+        <result column="modified_by_email" property="modifiedByEmail" />
+        <result column="owner_id" property="ownerId" />
+        <result column="owner_name" property="ownerName" />
+        <result column="owner_email" property="ownerEmail" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- Basic fields -->
+    <sql id="Base_Column_List">
+        id, name, description, created_at, modified_at, size, version, filepath, role,
+        created_by_id, created_by_name, created_by_email,
+        modified_by_id, modified_by_name, modified_by_email,
+        owner_id, owner_name, owner_email,
+        create_time, update_time
+    </sql>
+
+    <!-- Query by filename -->
+    <select id="selectByName" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List" />
+        FROM doc_meta
+        WHERE name = #{name}
+        LIMIT 1
+    </select>
+
+    <!-- Query by file path -->
+    <select id="selectByFilepath" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List" />
+        FROM doc_meta
+        WHERE filepath = #{filepath}
+        LIMIT 1
+    </select>
+
+    <!-- Query all document metadata and sort by modification time in descending order -->
+    <select id="selectAllOrderByModifiedAt" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List" />
+        FROM doc_meta
+        ORDER BY modified_at DESC
+    </select>
+
+    <!-- Query by creator ID -->
+    <select id="selectByCreatedById" resultMap="BaseResultMap">
+        SELECT 
+        <include refid="Base_Column_List" />
+        FROM doc_meta
+        WHERE created_by_id = #{createdById}
+        ORDER BY modified_at DESC
+    </select>
+
+</mapper>
