@@ -1,0 +1,35 @@
+# Spring Boot configuration file, using SQLite embedded database, automatically creates database files, no manual database installation required
+
+server:
+  port: ${SERVER_PORT:8000}
+
+spring:
+  application:
+    name: filez-demo
+  freemarker:
+    cache: false
+    suffix: '.ftl'
+    settings.template_update_delay: 0
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+      # Maximum request size is 1G
+      max-request-size: 1000MB
+  datasource:
+    url: jdbc:sqlite:${DB_PATH:./data/filez_demo.db}
+    driver-class-name: org.sqlite.JDBC
+  config:
+    import: [ zoffice.yml ]
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.filez.demo.entity
+  configuration:
+    # Automatic camel case conversion
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  file:
+    name: logs/filezDemo.log

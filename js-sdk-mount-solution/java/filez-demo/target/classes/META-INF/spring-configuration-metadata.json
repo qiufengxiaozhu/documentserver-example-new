@@ -1,0 +1,117 @@
+{
+  "groups": [
+    {
+      "name": "demo",
+      "type": "com.filez.demo.config.DemoConfig",
+      "sourceType": "com.filez.demo.config.DemoConfig"
+    },
+    {
+      "name": "demo.admin",
+      "type": "com.filez.demo.config.DemoConfig$DemoUserConfig",
+      "sourceType": "com.filez.demo.config.DemoConfig",
+      "sourceMethod": "public com.filez.demo.config.DemoConfig.DemoUserConfig getAdmin() "
+    },
+    {
+      "name": "demo.admin",
+      "type": "com.filez.demo.config.DemoConfig$DemoUserConfig",
+      "sourceType": "com.filez.demo.config.DemoConfig$DemoUserConfig"
+    },
+    {
+      "name": "zoffice.service",
+      "type": "com.filez.demo.config.ZOfficeConfig",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig"
+    },
+    {
+      "name": "zoffice.service.app",
+      "type": "com.filez.demo.config.ZOfficeConfig$App",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig",
+      "sourceMethod": "public com.filez.demo.config.ZOfficeConfig.App getApp() "
+    },
+    {
+      "name": "zoffice.service.app",
+      "type": "com.filez.demo.config.ZOfficeConfig$App",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig$App"
+    }
+  ],
+  "properties": [
+    {
+      "name": "demo.admin.email",
+      "type": "java.lang.String",
+      "description": "Email",
+      "sourceType": "com.filez.demo.config.DemoConfig$DemoUserConfig"
+    },
+    {
+      "name": "demo.admin.pwd",
+      "type": "java.lang.String",
+      "description": "Default password",
+      "sourceType": "com.filez.demo.config.DemoConfig$DemoUserConfig"
+    },
+    {
+      "name": "demo.admin.uname",
+      "type": "java.lang.String",
+      "description": "Default user",
+      "sourceType": "com.filez.demo.config.DemoConfig$DemoUserConfig"
+    },
+    {
+      "name": "demo.context",
+      "type": "java.lang.String",
+      "sourceType": "com.filez.demo.config.DemoConfig"
+    },
+    {
+      "name": "demo.host",
+      "type": "java.lang.String",
+      "sourceType": "com.filez.demo.config.DemoConfig"
+    },
+    {
+      "name": "demo.repo-id",
+      "type": "java.lang.String",
+      "sourceType": "com.filez.demo.config.DemoConfig"
+    },
+    {
+      "name": "demo.schema",
+      "type": "java.lang.String",
+      "sourceType": "com.filez.demo.config.DemoConfig"
+    },
+    {
+      "name": "demo.token-name",
+      "type": "java.lang.String",
+      "sourceType": "com.filez.demo.config.DemoConfig"
+    },
+    {
+      "name": "zoffice.service.app.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig$App"
+    },
+    {
+      "name": "zoffice.service.context",
+      "type": "java.lang.String",
+      "description": "ZOffice service context path",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig"
+    },
+    {
+      "name": "zoffice.service.cors",
+      "type": "java.lang.Boolean",
+      "description": "Whether to allow cross-origin requests",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig"
+    },
+    {
+      "name": "zoffice.service.host",
+      "type": "java.lang.String",
+      "description": "ZOffice service host address",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig"
+    },
+    {
+      "name": "zoffice.service.port",
+      "type": "java.lang.Integer",
+      "description": "ZOffice service port number",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig"
+    },
+    {
+      "name": "zoffice.service.schema",
+      "type": "java.lang.String",
+      "description": "ZOffice service protocol, for example: http or https",
+      "sourceType": "com.filez.demo.config.ZOfficeConfig"
+    }
+  ],
+  "hints": []
+}
