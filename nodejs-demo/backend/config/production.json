@@ -1,0 +1,12 @@
+{
+  "server": {
+    "env": "production"
+  },
+  "jwt": {
+    "secret": "filez-demo-secret-key"
+  },
+  "session": {
+    "secret": "filez-demo-session-secret"
+  }
+}
+

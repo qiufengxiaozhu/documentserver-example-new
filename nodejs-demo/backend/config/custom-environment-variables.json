@@ -1,0 +1,51 @@
+{
+  "server": {
+    "port": "LS_SERVER_PORT",
+    "env": "LS_SERVER_ENV"
+  },
+  "database": {
+    "url": "LS_DATABASE_URL"
+  },
+  "log": {
+    "dir": "LS_LOG_DIR",
+    "level": "LS_LOG_LEVEL",
+    "maxFiles": "LS_LOG_MAXFILES"
+  },
+  "jwt": {
+    "secret": "LS_JWT_SECRET",
+    "expiresIn": "LS_JWT_EXPIRESIN"
+  },
+  "session": {
+    "secret": "LS_SESSION_SECRET",
+    "maxAge": "LS_SESSION_MAXAGE",
+    "key": "LS_SESSION_KEY"
+  },
+  "upload": {
+    "dir": "LS_UPLOAD_DIR",
+    "maxFileSize": "LS_UPLOAD_MAXFILESIZE"
+  },
+  "zoffice": {
+    "schema": "LS_ZOFFICE_SCHEMA",
+    "host": "LS_ZOFFICE_HOST",
+    "port": "LS_ZOFFICE_PORT",
+    "context": "LS_ZOFFICE_CONTEXT",
+    "cors": "LS_ZOFFICE_CORS",
+    "app": {
+      "secret": "LS_ZOFFICE_APP_SECRET",
+      "feIntegration": {
+        "enable": "LS_ZOFFICE_APP_FEINTEGRATION_ENABLE"
+      }
+    }
+  },
+  "demo": {
+    "host": "LS_DEMO_HOST",
+    "context": "LS_DEMO_CONTEXT",
+    "repoId": "LS_DEMO_REPOID",
+    "tokenName": "LS_DEMO_TOKENNAME"
+  },
+  "admin": {
+    "username": "LS_ADMIN_USERNAME",
+    "password": "LS_ADMIN_PASSWORD",
+    "email": "LS_ADMIN_EMAIL"
+  }
+}

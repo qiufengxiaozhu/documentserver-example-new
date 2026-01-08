@@ -1,0 +1,15 @@
+{
+  "zoffice": {
+    "host": "172.20.17.245",
+    "port": 8001,
+    "app": {
+      "feIntegration": {
+        "enable": false
+      }
+    }
+  },
+  "demo": {
+    "host": "172.20.17.245",
+    "repoId": "3rd-party",
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "server": {
+    "port": 8000,
+    "env": "development"
+  },
+  "database": {
+    "url": "file:./data/filez_demo.db"
+  },
+  "log": {
+    "dir": "./logs",
+    "level": "info",
+    "maxFiles": "30d"
+  },
+  "jwt": {
+    "secret": "filez-demo-secret-key",
+    "expiresIn": "7d"
+  },
+  "session": {
+    "secret": "filez-demo-session-secret",
+    "maxAge": 86400000,
+    "key": "filez:sess"
+  },
+  "upload": {
+    "dir": "./uploads",
+    "maxFileSize": 524288000
+  },
+  "zoffice": {
+    "schema": "http",
+    "host": "172.16.34.165",
+    "port": 8001,
+    "context": "/docs/app/driver-callback",
+    "cors": true,
+    "app": {
+      "secret": "default-salt",
+      "feIntegration": {
+        "enable": true
+      }
+    }
+  },
+  "demo": {
+    "host": "172.16.34.165",
+    "context": "/v2/context",
+    "repoId": "3rd-party",
+    "tokenName": "zdocs_access_token"
+  },
+  "admin": {
+    "username": "admin",
+    "password": "zOffice",
+    "email": "admin@lenovozOffice.com"
+  }
+}
