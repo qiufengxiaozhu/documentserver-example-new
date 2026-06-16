@@ -1,0 +1,35 @@
+# Spring Boot 配置文件，使用SQLite内置数据库，自动创建数据库文件，无需手动安装数据库
+
+server:
+  port: ${SERVER_PORT:8000}
+
+spring:
+  application:
+    name: filez-demo
+  freemarker:
+    cache: false
+    suffix: '.ftl'
+    settings.template_update_delay: 0
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+      # 最大请求大小为1G
+      max-request-size: 1000MB
+  datasource:
+    url: jdbc:sqlite:${DB_PATH:./data/filez_demo.db}
+    driver-class-name: org.sqlite.JDBC
+  config:
+    import: [ zoffice.yml ]
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.filez.demo.entity
+  configuration:
+    # 自动转驼峰
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  file:
+    name: logs/filezDemo.log

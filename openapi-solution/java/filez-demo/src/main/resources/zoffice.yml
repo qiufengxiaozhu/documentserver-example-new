@@ -1,0 +1,29 @@
+# 集成的配置文件，分为zoffice的配置以及业务系统的配置
+
+# 1、zoffice服务的配置，需与文档中台管理控制台的应用设置保持一致
+zoffice:
+  service:
+    schema: '${ZOFFICE_SCHEMA:http}'
+    host: '${ZOFFICE_HOST:your-zoffice-host}'       # zOffice部署的服务域名或主机IP，请替换为实际地址
+    port: ${ZOFFICE_PORT:8001}
+    context: /docs/app/driver-callback              # zOffice 固定路径
+    cors: ${ZOFFICE_CORS:true}
+    app:
+      secret: "${ZOFFICE_APP_SECRET:default-salt}"  # zOffice应用密钥，需与管理控制台一致
+      fe-integration:
+        enable: ${ZOFFICE_FE_INTEGRATION:false}      # 是否开启前端集成
+    publicapi:                                          # PublicAPI 配置，用于对接 luoshu-server 的 OpenAPI 接口
+      app-id: '${ZOFFICE_PUBLICAPI_APPID:publicApi}'       # PublicAPI 的 appId
+      secret: '${ZOFFICE_PUBLICAPI_SECRET:default-salt}'    # PublicAPI 的密钥，需与管理控制台一致
+      context: '${ZOFFICE_PUBLICAPI_CONTEXT:/publicapi/v1}' # PublicAPI 接口路径前缀
+
+# 2、业务系统的配置
+demo:
+  host: '${DEMO_HOST:your-demo-host}'              # 业务系统部署的服务域名或主机IP，请替换为本机 IP
+  context: '${DEMO_CONTEXT:/v2/context}'      # 业务系统请求路径
+  repoId: '${DEMO_REPO_ID:3rd-party}'         # 业务系统应用id，需与管理控制台一致
+  token-name: '${DEMO_TOKEN_NAME:zdocs_access_token}' # 业务系统的认证token名，可在管理控制台配置
+  admin:          # 默认登录用户配置，与集成无关
+    uname: admin
+    pwd: zOffice
+    email: admin@lenovo_zOffice.com
